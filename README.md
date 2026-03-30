@@ -2,6 +2,10 @@
 
 **A sleek, voice-powered virtual assistant built with React and Google Gemini AI**
 
+<p align="center">
+  <img src="./assets/ss1.png" alt="Myra" width="100%" style="border-radius: 12px;" />
+</p>
+
 ---
 
 ## ✨ Overview
