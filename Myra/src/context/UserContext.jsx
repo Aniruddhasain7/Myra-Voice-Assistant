@@ -42,8 +42,7 @@ const UserContext = ({ children }) => {
       setTimeout(() => {
         setSpeaking(false);
       }, 7000);
-    }
-    else if (command.includes("open") && command.includes("google")) {
+    } else if (command.includes("open") && command.includes("google")) {
       window.open("https://www.google.com/", "_blank");
       speak("opening Google...");
       setResponse(true);
@@ -51,28 +50,37 @@ const UserContext = ({ children }) => {
       setTimeout(() => {
         setSpeaking(false);
       }, 7000);
-    }
-
-    else if (command.includes("time")) {
-      let time=new Date().toLocaleString(undefined,{hour:"numeric", minute: "numeric"})
+    } else if (command.includes("time")) {
+      let time = new Date().toLocaleString(undefined, {
+        hour: "numeric",
+        minute: "numeric",
+      });
       speak(time);
       setResponse(true);
       setPrompt(time);
       setTimeout(() => {
         setSpeaking(false);
       }, 7000);
-    }
-    else if (command.includes("date")) {
-      let date=new Date().toLocaleString(undefined,{day:"numeric", month: "short"})
+    } else if (command.includes("date")) {
+      let date = new Date().toLocaleString(undefined, {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
       speak(date);
       setResponse(true);
       setPrompt(date);
       setTimeout(() => {
         setSpeaking(false);
       }, 7000);
-    }
-    else{
-      aiResponse(command)
+    } else if (command.includes("your name")) {
+      speak("I am Myra, your virtual assistant");
+      setPrompt("I am Myra, your virtual assistant");
+    } else if (command.includes("who created you")) {
+      speak("I was created by Aniruddha");
+      setPrompt("I was created by Aniruddha");
+    } else {
+      aiResponse(command);
     }
   }
 
