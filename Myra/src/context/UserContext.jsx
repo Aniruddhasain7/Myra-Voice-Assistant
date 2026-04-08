@@ -34,7 +34,7 @@ const UserContext = ({ children }) => {
     takeCommand(transcript.toLowerCase());
   };
   function takeCommand(command) {
-    if (command.includes("open") && command.includes("youtube")) {
+    if (command.includes("open youtube")) {
       window.open("https://www.youtube.com/", "_blank");
       speak("opening Youtube...");
       setResponse(true);
@@ -42,7 +42,7 @@ const UserContext = ({ children }) => {
       setTimeout(() => {
         setSpeaking(false);
       }, 7000);
-    } else if (command.includes("open") && command.includes("google")) {
+    } else if (command.includes("open google")) {
       window.open("https://www.google.com/", "_blank");
       speak("opening Google...");
       setResponse(true);
@@ -75,10 +75,18 @@ const UserContext = ({ children }) => {
       }, 7000);
     } else if (command.includes("your name")) {
       speak("I am Myra, your virtual assistant");
+      setResponse(true);
       setPrompt("I am Myra, your virtual assistant");
+      setTimeout(() => {
+        setSpeaking(false);
+      }, 7000);
     } else if (command.includes("who created you")) {
       speak("I was created by Aniruddha");
+      setResponse(true);
       setPrompt("I was created by Aniruddha");
+      setTimeout(() => {
+        setSpeaking(false);
+      }, 7000);
     } else {
       aiResponse(command);
     }
