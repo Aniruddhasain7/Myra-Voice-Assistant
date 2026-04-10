@@ -87,6 +87,22 @@ const UserContext = ({ children }) => {
       setTimeout(() => {
         setSpeaking(false);
       }, 7000);
+    } else if (command.includes("open chatgpt")) {
+      window.open("https://chatgpt.com/", "_blank");
+      speak("opening Chatgpt...");
+      setResponse(true);
+      setPrompt("opening Chatgpt...");
+      setTimeout(() => {
+        setSpeaking(false);
+      }, 7000);
+    } else if (command.includes("open nexa")) {
+      window.open("https://nexa-7.vercel.app/", "_blank");
+      speak("opening Nexa...");
+      setResponse(true);
+      setPrompt("opening Nexa...");
+      setTimeout(() => {
+        setSpeaking(false);
+      }, 7000);
     } else {
       aiResponse(command);
     }
