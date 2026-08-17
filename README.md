@@ -1,92 +1,67 @@
 # 🤖 Myra — AI Voice Assistant
 
-**A sleek, voice-powered virtual assistant built with React and Google Gemini AI**
+**A sleek, voice-powered virtual assistant built with React 19, Vite 8, and Google Gemini AI**
 
 <p align="center">
-  <img src="./assets/ss1.png" alt="Myra" width="100%" style="border-radius: 12px;" />
+  <img src="./assets/ss1.png" alt="Myra AI Voice Assistant" width="100%" style="border-radius: 12px;" />
 </p>
 
 ---
 
 ## ✨ Overview
 
-**Myra** is a browser-based AI voice assistant that listens to your voice commands, understands them using Google's Gemini AI, and responds with spoken audio. It can handle everyday tasks — opening websites, telling the time and date, and answering any question using the power of generative AI.
+**Myra** is an interactive, browser-based AI voice assistant featuring a high-tech Sci-Fi Reactor Core HUD avatar. Powered by the official `@google/genai` SDK and Google's **Gemini 3.5 Flash** model, Myra listens to voice commands, understands user intent, and responds in natural spoken audio.
+
+Whether you need quick web navigation, real-time date/time updates, or conversational generative AI responses, Myra offers a fast, fluid, and visually stunning experience.
 
 ---
 
-## 🎯 Features
+## 🎯 Key Features
 
-| Feature                     | Description                                                                |
-| --------------------------- | -------------------------------------------------------------------------- |
-| 🎙️ **Voice Recognition**    | Uses the Web Speech API to capture and transcribe your speech in real time |
-| 🧠 **AI-Powered Responses** | Falls back to Google Gemini 2.5 Flash Lite for intelligent answers         |
-| 🔊 **Text-to-Speech**       | Speaks responses aloud using the browser's Speech Synthesis API            |
-| 🌐 **Open Websites**        | Voice commands to open YouTube, Google, and more                           |
-| 🕐 **Time & Date**          | Instantly tells you the current time or date on request                    |
-| ⚡ **Blazing Fast**         | Powered by Vite for near-instant dev startup and hot module replacement    |
+- 🎙️ **Voice Recognition**: Real-time speech-to-text using the Web Speech API with automatic locale detection.
+- 🧠 **Gemini 3.5 Flash AI Engine**: Integrated with `@google/genai` for short, concise, and natural spoken answers.
+- 🔊 **Dynamic Text-to-Speech**: Converts responses to spoken audio with automatic SpeechSynthesis voice selection and Markdown cleanup.
+- ⚛️ **Futuristic Sci-Fi HUD Avatar**: Dynamic vector SVG HUD featuring dual rotating ring indicators, sound spectrum visualizers, reactor core glow, and live state updates (`MYRA // IDLE`, `MYRA // LISTENING...`, `MYRA // SPEAKING`).
+- 🌐 **Web Navigation**: Voice commands to open YouTube, Google, and Nexa instantly in new tabs.
+- 🕐 **Time & Date Queries**: Rapid voice access to local time and current date.
+- 👤 **Persona & Creator Awareness**: Recognizes her identity (Myra) and creator (Aniruddha).
+- ⚡ **Modern Stack**: Built with React 19 and Vite 8 for fast dev setup and performance.
 
 ---
 
 ## 🗣️ Supported Voice Commands
 
-```
-"Open YouTube"        → Opens YouTube in a new tab
-"Open Google"         → Opens Google in a new tab
-"What's the time?"    → Tells the current time
-"What's the date?"    → Tells the current date
-"<Anything else>"     → Answered intelligently by Gemini AI
-```
+| Command | Action |
+| :--- | :--- |
+| `"Open YouTube"` | Opens YouTube in a new tab |
+| `"Open Google"` | Opens Google search in a new tab |
+| `"Open Nexa"` | Opens Nexa platform in a new tab |
+| `"What's the time?"` | Speaks and displays the current time |
+| `"What's the date?"` | Speaks and displays today's date |
+| `"What is your name?"` | Introduces herself as Myra |
+| `"Who created you?"` | Identifies her creator (Aniruddha) |
+| *`<Any question or prompt>`* | Contextually answered by Google Gemini 3.5 Flash |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **[React 19](https://react.dev/)** — UI framework with Hooks & Context API
-- **[Vite 8](https://vite.dev/)** — Lightning-fast build tool
-- **[Google Generative AI SDK](https://ai.google.dev/)** — Gemini 2.5 Flash Lite model
-- **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)** — `SpeechRecognition` & `SpeechSynthesis` (browser native)
-- **[React Icons](https://react-icons.github.io/react-icons/)** — Icon library
+### 🎨 Frontend & UI
 
----
+| Category | Technology |
+| :--- | :--- |
+| **Framework** | React 19 |
+| **Build Tool** | Vite 8 |
+| **Styling** | CSS3 (Cyberpunk Glassmorphism & SVG Animations) |
+| **UI Components** | React Icons (`react-icons`) |
 
-## 🚀 Getting Started
+### 🌐 Integrations & Web APIs
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- A **Google Gemini API Key** — get one free at [Google AI Studio](https://aistudio.google.com/apikey)
-- A Chromium-based browser (Chrome/Edge) for full Web Speech API support
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/myra.git
-cd myra
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Set Up Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
-```
-
-> ⚠️ **Never commit your `.env` file.** It is already listed in `.gitignore`.
-
-### 4. Start the Development Server
-
-```bash
-npm run dev
-```
-
-Then open your browser at **`http://localhost:5173`**
+| Category | Technology |
+| :--- | :--- |
+| **AI SDK** | `@google/genai` (^1.48.0) |
+| **AI Model** | Google Gemini 3.5 Flash |
+| **Voice Engines** | Web Speech API (`SpeechRecognition` & `SpeechSynthesis`) |
 
 ---
 
@@ -94,51 +69,37 @@ Then open your browser at **`http://localhost:5173`**
 
 ```
 Myra/
-├── public/                 # Static assets
-├── src/
-│   ├── assets/             # Images and GIFs (ai.png, speak.gif, voice.gif)
-│   ├── context/
-│   │   └── UserContext.jsx # Global state, speech recognition & command logic
-│   ├── App.jsx             # Main UI component
-│   ├── App.css             # Component styles
-│   ├── gemini.js           # Google Gemini AI integration
-│   ├── index.css           # Global styles
-│   └── main.jsx            # App entry point
-├── .env                    # API keys (not committed)
-├── .gitignore
-├── index.html
-├── package.json
-└── vite.config.js
+├── assets/                  # Project screenshot assets
+└── Myra/
+    ├── public/              # Static assets
+    ├── src/
+    │   ├── assets/          # Logos & branding images
+    │   ├── components/
+    │   │   └── MyraAvatar.jsx # Animated Sci-Fi HUD Reactor avatar
+    │   ├── context/
+    │   │   └── UserContext.jsx # Global voice recognition, TTS & command handler logic
+    │   ├── App.css          # Cyberpunk glassmorphism & HUD styles
+    │   ├── App.jsx          # Main UI layout & mic trigger
+    │   ├── gemini.js        # Google GenAI SDK integration (@google/genai)
+    │   ├── index.css        # Base global styles
+    │   └── main.jsx         # React application entry point
+    ├── .env                 # API Keys (Git-ignored)
+    ├── index.html
+    ├── package.json
+    └── vite.config.js
 ```
-
----
-
-## 📜 Available Scripts
-
-| Command           | Description                          |
-| ----------------- | ------------------------------------ |
-| `npm run dev`     | Start the local development server   |
-| `npm run build`   | Build the app for production         |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint`    | Run ESLint to check code quality     |
-
----
-
-## 🔒 Environment Variables
-
-| Variable              | Required | Description                |
-| --------------------- | -------- | -------------------------- |
-| `VITE_GEMINI_API_KEY` | ✅ Yes   | Your Google Gemini API key |
 
 ---
 
 ## 🌐 Browser Compatibility
 
-Myra relies on the **Web Speech API**, which is best supported in Chromium-based browsers.
+Myra relies on the **Web Speech API**, which works best in Chromium-based browsers.
 
-| Browser           | Voice Recognition | Text-to-Speech |
-| ----------------- | ----------------- | -------------- |
-| ✅ Google Chrome  | Supported         | Supported      |
-| ✅ Microsoft Edge | Supported         | Supported      |
-| ⚠️ Firefox        | Limited           | Supported      |
-| ❌ Safari         | Not Supported     | Supported      |
+| Browser | Voice Recognition (STT) | Text-to-Speech (TTS) |
+| :--- | :---: | :---: |
+| ✅ **Google Chrome** | Supported | Supported |
+| ✅ **Microsoft Edge** | Supported | Supported |
+| ⚠️ **Firefox** | Limited / Config required | Supported |
+| ❌ **Safari** | Not Supported | Supported |
+
+

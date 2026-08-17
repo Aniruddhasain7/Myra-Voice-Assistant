@@ -1,29 +1,25 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+const genAI = new GoogleGenAI({
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY,
+});
 
+export async function run(prompt) {
+  try {
+    const response = await genAI.models.generateContent({
+      model: "gemini-3.5-flash",
+      contents: prompt,
+      config: {
+        systemInstruction:
+          "You are Myra, a friendly and intelligent female voice assistant. Keep your responses short, natural, concise (1-2 sentences), and easy to speak aloud.",
+      },
+    });
 
-const generationConfig = {
-  temperature: 1,
-  topP: 0.95,
-  topK: 40,
-  maxOutputTokens: 100,
-  responseMimeType: "text/plain",
-};
-
-async function run(prompt) {
-  
-  const model = genAI.getGenerativeModel({ 
-    model: "gemini-2.5-flash-lite", 
-    generationConfig, 
-  });
-
-  const chatSession = model.startChat({
-    history: [], 
-  });
-
-  const result = await chatSession.sendMessage(prompt);
-  return result.response.text();
+    return response.text;
+  } catch (error) {
+    console.error("Gemini Error:", error);
+    return "Something went wrong";
+  }
 }
 
 export default run;
