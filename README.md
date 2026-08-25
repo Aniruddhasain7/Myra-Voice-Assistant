@@ -10,7 +10,7 @@
 
 ## ✨ Overview
 
-**Myra** is an interactive, browser-based AI voice assistant featuring a high-tech Sci-Fi Reactor Core HUD avatar. Powered by the official `@google/genai` SDK and Google's **Gemini 3.5 Flash** model, Myra listens to voice commands, understands user intent, and responds in natural spoken audio.
+**Myra** is an interactive, browser-based AI voice assistant featuring a high-tech Sci-Fi Reactor Core HUD avatar. Powered by the official `@google/genai` SDK and Google's **Gemini 3.1 Flash Lite** model, Myra listens to voice commands, understands user intent, and responds in natural spoken audio.
 
 Whether you need quick web navigation, real-time date/time updates, or conversational generative AI responses, Myra offers a fast, fluid, and visually stunning experience.
 
@@ -19,7 +19,7 @@ Whether you need quick web navigation, real-time date/time updates, or conversat
 ## 🎯 Key Features
 
 - 🎙️ **Voice Recognition**: Real-time speech-to-text using the Web Speech API with automatic locale detection.
-- 🧠 **Gemini 3.5 Flash AI Engine**: Integrated with `@google/genai` for short, concise, and natural spoken answers.
+- 🧠 **Gemini 3.1 Flash Lite AI Engine**: Integrated with `@google/genai` for short, concise, and natural spoken answers.
 - 🔊 **Dynamic Text-to-Speech**: Converts responses to spoken audio with automatic SpeechSynthesis voice selection and Markdown cleanup.
 - ⚛️ **Futuristic Sci-Fi HUD Avatar**: Dynamic vector SVG HUD featuring dual rotating ring indicators, sound spectrum visualizers, reactor core glow, and live state updates (`MYRA // IDLE`, `MYRA // LISTENING...`, `MYRA // SPEAKING`).
 - 🌐 **Web Navigation**: Voice commands to open YouTube, Google, and Nexa instantly in new tabs.
@@ -40,7 +40,7 @@ Whether you need quick web navigation, real-time date/time updates, or conversat
 | `"What's the date?"` | Speaks and displays today's date |
 | `"What is your name?"` | Introduces herself as Myra |
 | `"Who created you?"` | Identifies her creator (Aniruddha) |
-| *`<Any question or prompt>`* | Contextually answered by Google Gemini 3.5 Flash |
+| *`<Any question or prompt>`* | Contextually answered by Google Gemini 3.1 Flash Lite |
 
 ---
 
@@ -60,7 +60,7 @@ Whether you need quick web navigation, real-time date/time updates, or conversat
 | Category | Technology |
 | :--- | :--- |
 | **AI SDK** | `@google/genai` (^1.48.0) |
-| **AI Model** | Google Gemini 3.5 Flash |
+| **AI Model** | Google Gemini 3.1 Flash Lite (`gemini-3.1-flash-lite`) |
 | **Voice Engines** | Web Speech API (`SpeechRecognition` & `SpeechSynthesis`) |
 
 ---
